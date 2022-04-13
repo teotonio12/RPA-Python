@@ -1,34 +1,18 @@
-from turtle import delay
-import pyautogui
-import time
+import red
+import black
+import white
+import setup
 
-xred = "2535"
-yred = "417"
-
-xblack = "2719"
-yblack = "421"
-
-xwhite = "0"
-ywhite = "0"
-
+setup.init()
 
 aposta = input("Informe a Aposta: ")
 print("Aposta Informada: ", aposta)
 
 if(aposta  == "red"): 
-    xposicion = xred
-    yposicion = yred
+    red.apostar()
+    white.apostar()
 
 if(aposta == "black"):
-    xposicion = xblack
-    yposicion = yblack
+    black.apostar()
+    white.apostar()
 
-
-pyautogui.press('win')
-pyautogui.write('chrome')
-pyautogui.press('enter')
-time.sleep(1)
-pyautogui.write("https://blaze.com/pt/games/double")
-pyautogui.press('enter')
-
-pyautogui.click(xposicion,yposicion) 
